@@ -5,6 +5,8 @@ import com.example.inventory.repository.ToolRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Service
 public class ToolService {
@@ -19,5 +21,17 @@ public class ToolService {
         }
         // Repository ile DB’ye kaydediyoruz
         return toolRepository.save(tool);
+    }
+
+
+    // Tümünü getir
+    public List<Tool> getAllTools() {
+        return toolRepository.findAll();
+    }
+
+    // ID’ye göre getir
+    public Tool getToolById(Long id) {
+        return toolRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Tool not found with id: " + id));
     }
 }
