@@ -1,0 +1,23 @@
+"2025-09-04 01:45:13,424 INFO  [main] com.example.inventory.InventoryApplication:Starting InventoryApplication using Java 21.0.2 with PID 35096 (C:\Users\suleyman\OneDrive\Masaüstü\my projects\inventory\inventory\target\classes started by suleyman in C:\Users\suleyman\OneDrive\Masaüstü\my projects\inventory)
+""2025-09-04 01:45:13,448 INFO  [main] com.example.inventory.InventoryApplication:No active profile set, falling back to 1 default profile: "default"
+""2025-09-04 01:45:14,833 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate:Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2025-09-04 01:45:14,954 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate:Finished Spring Data repository scanning in 103 ms. Found 1 JPA repository interface.
+""2025-09-04 01:45:16,071 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:Tomcat initialized with port 8080 (http)
+""2025-09-04 01:45:16,095 INFO  [main] org.apache.catalina.core.StandardService:Starting service [Tomcat]
+""2025-09-04 01:45:16,095 INFO  [main] org.apache.catalina.core.StandardEngine:Starting Servlet engine: [Apache Tomcat/10.1.26]
+""2025-09-04 01:45:16,208 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:Initializing Spring embedded WebApplicationContext
+""2025-09-04 01:45:16,209 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:Root WebApplicationContext: initialization completed in 2667 ms
+""2025-09-04 01:45:16,527 INFO  [main] org.hibernate.jpa.internal.util.LogHelper:HHH000204: Processing PersistenceUnitInfo [name: default]
+""2025-09-04 01:45:16,662 INFO  [main] org.hibernate.Version:HHH000412: Hibernate ORM core version 6.4.9.Final
+""2025-09-04 01:45:16,749 INFO  [main] org.hibernate.cache.internal.RegionFactoryInitiator:HHH000026: Second-level cache disabled
+""2025-09-04 01:45:17,221 INFO  [main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo:No LoadTimeWeaver setup: ignoring JPA class transformer
+""2025-09-04 01:45:17,266 INFO  [main] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Starting...
+""2025-09-04 01:45:17,609 INFO  [main] com.zaxxer.hikari.pool.HikariPool:HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@33d230ce
+""2025-09-04 01:45:17,611 INFO  [main] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Start completed.
+""2025-09-04 01:45:17,685 WARN  [main] org.hibernate.orm.deprecation:HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+""2025-09-04 01:45:19,011 INFO  [main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator:HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+""2025-09-04 01:45:19,088 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2025-09-04 01:45:19,537 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration:spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2025-09-04 01:45:20,278 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:Tomcat started on port 8080 (http) with context path ''
+""2025-09-04 01:45:20,296 INFO  [main] com.example.inventory.InventoryApplication:Started InventoryApplication in 7.739 seconds (process running for 8.601)
+"

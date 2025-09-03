@@ -1,0 +1,78 @@
+<!-- pom.xml -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- Spring Boot parent: bağımlılık sürümlerini yönetir -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.2.8</version> <!-- IDE’de var olan en güncel 3.2.x olabilir -->
+		<relativePath/>
+	</parent>
+
+	<!-- Proje bilgileri -->
+	<groupId>com.depo</groupId>
+	<artifactId>inventory</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>inventory</name>
+	<description>Depo Yönetim Uygulaması</description>
+
+	<!-- Java sürümü: 17 önerilir -->
+	<properties>
+		<java.version>21</java.version>
+	</properties>
+
+	<dependencies>
+		<!-- Web starter: REST API yazmak için (Controller vs.) -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- JPA starter: Entity/Repository ile ORM (Hibernate) kullanmak için -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<!-- PostgreSQL sürücüsü: PostgreSQL'e bağlanmak için gerekli -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope> <!-- Çalışma anında gerekir -->
+		</dependency>
+
+		<!-- (Opsiyonel ama faydalı) Validation: request doğrulama için -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+
+		<!-- Testler için (şimdilik dokunmuyoruz) -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- Spring Boot plugin: uygulamayı çalıştırma/packaging için -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>
