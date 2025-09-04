@@ -17,7 +17,7 @@ public class ToolService {
         // İş kuralları burada olabilir
         // Örn: quantity negatif olamaz
         if (tool.getQuantity() < 0) {
-            throw new IllegalArgumentException("Miktar negatif olamaz");
+            throw new IllegalArgumentException("Quantity cannot be negative");
         }
         // Repository ile DB’ye kaydediyoruz
         return toolRepository.save(tool);
@@ -37,11 +37,11 @@ public class ToolService {
     public Tool updateTool(Long id, Tool tool) {
         // Önce DB’den mevcut kaydı al
         Tool existingTool = toolRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Araç bulunamadı"));
+                .orElseThrow(() -> new RuntimeException("Tool not found"));
 
         // İş kuralları: quantity negatif olamaz
         if (tool.getQuantity() < 0) {
-            throw new IllegalArgumentException("Miktar negatif olamaz");
+            throw new IllegalArgumentException("Quantity cannot be negative");
         }
 
         // Güncellenen alanları mevcut objeye set et
@@ -53,7 +53,13 @@ public class ToolService {
         return toolRepository.save(existingTool); // save hem insert hem update yapar
     }
 
+    // Araç sil
+    public void deleteTool(Long id) {
+        Tool existingTool = toolRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Tool not found"));
 
+        toolRepository.delete(existingTool);
+    }
 
 
 }

@@ -56,4 +56,13 @@ public class ToolController {
         return ResponseEntity.ok(updatedTool);
     }
 
+
+
+    // Araç sil
+    @DeleteMapping("/delete/{id}") // http://localhost:8080/api/tools/delete/1
+    public ResponseEntity<String> deleteTool(@PathVariable Long id) {
+        toolService.deleteTool(id);
+        return ResponseEntity.ok("Tool successfully deleted");
+    }
+
 }
