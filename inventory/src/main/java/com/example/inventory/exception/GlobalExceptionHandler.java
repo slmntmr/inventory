@@ -20,4 +20,11 @@ public class GlobalExceptionHandler {
 
     // İstersen farklı tipte hatalar için başka metotlar da ekleyebiliriz.
     // Örn: RuntimeException, NullPointerException, CustomException...
+
+    // GET ile bulunamayan kayıt
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<String> handleRuntime(RuntimeException ex) {
+        // Kullanıcıya sadece mesaj dönecek
+        return ResponseEntity.badRequest().body(ex.getMessage());
+    }
 }

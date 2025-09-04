@@ -42,4 +42,18 @@ public class ToolController {
         Tool tool = toolService.getToolById(id);
         return ResponseEntity.ok(tool);
     }
+
+
+    @PutMapping("/update/{id}") // http://localhost:8080/api/tools/update/5
+    public ResponseEntity<Tool> updateTool(
+            @PathVariable Long id,          // URL’den id alır
+            @RequestBody @Valid Tool tool) { // JSON body’den yeni değerleri alır
+
+        // Servise yönlendiriyoruz
+        Tool updatedTool = toolService.updateTool(id, tool);
+
+        // Servisten dönen güncellenmiş Tool objesini ResponseEntity ile kullanıcıya döner
+        return ResponseEntity.ok(updatedTool);
+    }
+
 }

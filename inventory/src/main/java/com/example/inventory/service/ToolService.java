@@ -34,4 +34,26 @@ public class ToolService {
         return toolRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Tool not found with id: " + id));
     }
+    public Tool updateTool(Long id, Tool tool) {
+        // Önce DB’den mevcut kaydı al
+        Tool existingTool = toolRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Araç bulunamadı"));
+
+        // İş kuralları: quantity negatif olamaz
+        if (tool.getQuantity() < 0) {
+            throw new IllegalArgumentException("Miktar negatif olamaz");
+        }
+
+        // Güncellenen alanları mevcut objeye set et
+        existingTool.setName(tool.getName());
+        existingTool.setQuantity(tool.getQuantity());
+        existingTool.setDescription(tool.getDescription());
+
+        // Repository ile DB’de kaydet
+        return toolRepository.save(existingTool); // save hem insert hem update yapar
+    }
+
+
+
+
 }
